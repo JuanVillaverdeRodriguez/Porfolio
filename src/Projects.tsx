@@ -9,8 +9,9 @@ const Projects = () => {
                 <div className="flex relative pt-8 ml-6 items-start">
                     <div className="items-start bg-zinc-800 p-1.5">
                         <img 
-                            src="src/images/Ocnet.png" 
+                            src="./src/assets/Ocnet.png" 
                             className="object-contain items-start w-96 h-auto"
+                            alt="Imagen del sintetizador"
                         />
                     </div>
                     <div className="flex-1 8 flex-col pl-8">
@@ -20,13 +21,13 @@ const Projects = () => {
                         <div className="pt-2 text-[1.125rem] text-gray-300">
                             <div className="flex space-x-4">
                                 <div className="flex items-center h-fit w-fit space-x-2 rounded-4xl bg-zinc-800 px-2 py-1 text-[0.925rem]">
-                                        <img src="/src/images/C++_Logo.svg" alt="Show more" className="w-4.5 h-4.5 scale-100 object-contain"/>
+                                        <img src="./src/assets/C++_Logo.svg" alt="Logo de C++" className="w-4.5 h-4.5 scale-100 object-contain"/>
                                         <div>
                                             C++
                                         </div>
                                 </div>
                                 <div className="flex items-center h-fit w-fit space-x-2 rounded-4xl bg-zinc-800 px-2 py-1 text-[0.925rem]">
-                                    <img src="/src/images/Juce.png" alt="Show more" className="w-4 h-4 scale-100 object-contain"/>
+                                    <img src="./src/assets/Juce_Logo.png" alt="Logo de Juce" className="w-4 h-4 scale-100 object-contain"/>
                                         <div>
                                             Juce
                                         </div>
@@ -56,8 +57,9 @@ const Projects = () => {
                 <div className="flex relative pt-8 ml-6 items-start">
                     <div className="items-start bg-zinc-800 p-1.5">
                         <img 
-                            src="src/images/Ocnet.png" 
+                            src="./src/assets/Ocnet.png" 
                             className="object-contain items-start w-96 h-auto"
+                            alt="Imagen de la aplicación de buses"
                         />
                     </div>
                     <div className="flex-1 8 flex-col pl-8">
@@ -67,19 +69,19 @@ const Projects = () => {
                         <div className="pt-2 text-[1.125rem] text-gray-300">
                             <div className="flex space-x-4">
                                 <div className="flex items-center h-fit w-fit space-x-2 rounded-4xl bg-zinc-800 px-2 py-1 text-[0.925rem]">
-                                        <img src="/src/images/Kotlin_Logo.svg" alt="Show more" className="w-4.5 h-4.5 scale-100 object-contain"/>
+                                        <img src="./src/assets/Kotlin_Logo.svg" alt="Logo de Kotlin" className="w-4.5 h-4.5 scale-100 object-contain"/>
                                         <div>
                                             Kotlin
                                         </div>
                                 </div>
                                 <div className="flex items-center h-fit w-fit space-x-2 rounded-4xl bg-zinc-800 px-2 py-1 text-[0.925rem]">
-                                    <img src="/src/images/React_Logo.svg" alt="Show more" className="w-4 h-4 scale-100 object-contain"/>
+                                    <img src="./src/assets/React_Logo.svg" alt="Logo de React" className="w-4 h-4 scale-100 object-contain"/>
                                         <div>
                                             React
                                         </div>
                                 </div>
                                 <div className="flex items-center h-fit w-fit space-x-2 rounded-4xl bg-zinc-800 px-2 py-1 text-[0.925rem]">
-                                    <img src="/src/images/Tailwind_Logo.svg" alt="Show more" className="w-4 h-4 scale-100 object-contain"/>
+                                    <img src="./src/assets/Tailwind_Logo.svg" alt="Logo de Tailwind" className="w-4 h-4 scale-100 object-contain"/>
                                         <div>
                                             Tailwind CSS
                                         </div>
