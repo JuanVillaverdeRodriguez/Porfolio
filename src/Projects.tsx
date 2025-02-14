@@ -3,7 +3,7 @@ import { GithubIcon } from "@/components/ui/github";
 const Projects = () => {
     return (
       <section id="projects" className="text-gray-200 mx-auto max-w-5xl px-4">
-        <h1 className="font-bold text-3xl pb-4">Proyectos</h1>
+        <h1 className="font-bold text-3xl pb-8">Proyectos</h1>
   
         <div className="flex flex-col md:flex-row items-start md:ml-6 mb-12">
           <div className="bg-zinc-800 p-1.5 mb-4 md:mb-0">

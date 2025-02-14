@@ -2,6 +2,8 @@
 import AboutMe from './AboutMe.tsx'
 import Experience from './Experience.tsx'
 import Projects from './Projects.tsx'
+import Header from './Header.tsx'
+
 
 
 function App() {
@@ -11,7 +13,7 @@ function App() {
         <div className="absolute z-[0] bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(192,132,252,.15),rgba(255,255,255,0))]"></div>
         <div className="absolute z-[0] bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(192,132,252,.15),rgba(255,255,255,0))]"></div>
         <div className="flex flex-col space-y-16 px-4 py-4">
-            {/*<Header/>*/}
+            <Header/>
             <AboutMe/>
             <Experience/>
             <Projects/>

@@ -6,7 +6,7 @@ const Experience = () => {
           <ol className="relative">
             <li className="relative flex flex-col md:flex-row items-start">
                 
-              <div className="mt-8 md:mt-0 pb-12 md:ml-16 mx-12 before:absolute before:left-0 before:top-0 before:w-1 before:bg-zinc-800 before:h-full before:rounded">
+              <div className="mt-8 md:mt-0 pb-8 md:ml-16 mx-12 before:absolute before:left-0 before:top-0 before:w-1 before:bg-zinc-800 before:h-full before:rounded">
                 <div className="absolute -left-1.25 mt-4 rounded-full bg-purple-300">
                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     </svg>
@@ -34,7 +34,7 @@ const Experience = () => {
                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     </svg>
                 </div>
-              <div className="mt-8 md:mt-0">
+              <div className="md:mt-0">
                 <h2 className="font-semibold text-xl md:text-2xl">Proyectos personales</h2>
                 <h3 className="text-base pb-4 text-gray-300">Constantemente...</h3>
                 <p className="text-base">
