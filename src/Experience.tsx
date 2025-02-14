@@ -9,7 +9,7 @@ const Experience = () => {
               <ol className="relative space-y-8">
                   <li className="relative flex items-start">
                       <div className="absolute -left-5.5 bg-zinc-900 text-black w-12 h-12 flex items-center justify-center rounded-full">
-                            <img src="./src/assets/TCP_Logo.svg" alt="Logo de tus clases particulares" className="w-64 h-64 scale-170 object-contain" />
+                            <img src="assets/TCP_Logo.svg" alt="Logo de tus clases particulares" className="w-64 h-64 scale-170 object-contain" />
                       </div>
 
                       <div className="pl-16">
@@ -33,7 +33,7 @@ const Experience = () => {
                   </li>
                   <li className="relative flex items-start">
                       <div className="absolute -left-5.5 bg-zinc-900 text-black w-12 h-12 flex items-center justify-center rounded-full">
-                        <img src="./src/assets/Projects_Icon.svg" alt="Icono de proyectos" className="w-32 h-32 scale-80 object-contain" />
+                        <img src="assets/Projects_Icon.svg" alt="Icono de proyectos" className="w-32 h-32 scale-80 object-contain" />
                       </div>
 
                       <div className="pl-16">

@@ -5,7 +5,7 @@ const AboutMe = () => {
     return (
         <div className="text-gray-200 flex flex-col">
             <div className="flex space-x-14">
-                <img className="rounded-full size-68" src="./src/assets/Yo.jpg" alt="Foto de perfil" />
+                <img className="rounded-full size-32 shadow-lg sm:size-68" src="assets/Yo.jpg" alt="Foto de perfil" />
                 <div>
                     <div>
                         <h1 className="bg-gradient-to-r from-gray-200 to-purple-300 bg-clip-text text-transparent font-bold text-6xl pt-4 pb-4">
@@ -24,7 +24,7 @@ const AboutMe = () => {
                     </div>
 
                     {/*<div className="pt-4 flex justify-center">
-                        <img src="/src/assets/ShowMore.svg" alt="Show more" className="cursor-pointer w-8 h-8 scale-120 duration-200 hover:translate-y-1 hover:text-purple-300" />
+                        <img src="assets/ShowMore.svg" alt="Show more" className="cursor-pointer w-8 h-8 scale-120 duration-200 hover:translate-y-1 hover:text-purple-300" />
                     </div>*/}
 
                     <div className="flex pt-4 space-x-4">
