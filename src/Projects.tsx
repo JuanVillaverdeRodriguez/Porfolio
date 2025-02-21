@@ -29,13 +29,13 @@ const Projects = () => {
               <div className="pt-4 text-base">
                 Mi TFG, desarrollé un <mark className="text-purple-300 bg-transparent font-bold">plugin de audio</mark> en C++ para la creación de sonidos y música. Tiene funcionalidades como creación de ondas, modulación y efectos de sonido. La nota final fue un <mark className="text-purple-300 bg-transparent font-bold">9,0</mark>.
               </div>
-              <div className="pt-4 text-sm">
+              <div className="pt-4 text-sm w-fit">
+              <a href="https://github.com/JuanVillaverdeRodriguez/ocnet">
                 <div className="flex space-x-3 border-2 border-zinc-700 items-center bg-zinc-800 w-fit rounded-full px-2 py-1">
-                  <a href="https://github.com/JuanVillaverdeRodriguez">
-                    <GithubIcon className="w-5 h-5 text-gray-300 -translate-y-1" />
-                  </a>
+                  <GithubIcon className="w-5 h-5 text-gray-300 -translate-y-1" />
                   <span>Código</span>
                 </div>
+                </a>
               </div>
             </div>
           </div>
@@ -44,7 +44,7 @@ const Projects = () => {
         <div className="flex flex-col md:flex-row items-start md:ml-6">
           <div className="bg-zinc-800 p-1.5 mb-4 md:mb-0">
             <img 
-              src="assets/Ocnet.png" 
+              src="assets/Bus_Management.png" 
               className="object-contain w-full md:w-96 h-auto" 
               alt="Imagen de la aplicación de buses" 
             />
@@ -69,13 +69,13 @@ const Projects = () => {
               <div className="pt-4 text-base">
                 Una aplicación en desarrollo para móvil que muestra los <mark className="text-purple-300 bg-transparent font-bold">horarios de los autobuses</mark> de la ciudad de Pontevedra. Dado que muchos datos son erróneos, también fué necesario crear una página web para ayudar a corregirlos.
               </div>
-              <div className="pt-4 text-sm">
-                <div className="flex space-x-3 border-2 border-zinc-700 items-center bg-zinc-800 w-fit rounded-full px-2 py-1">
-                  <a href="https://github.com/JuanVillaverdeRodriguez">
-                    <GithubIcon className="w-5 h-5 text-gray-300 -translate-y-1" />
-                  </a>
+              <div className="pt-4 text-sm w-fit">
+                <a href="https://github.com/JuanVillaverdeRodriguez/BusPontevedra">
+                <div className="cursor-pointer flex space-x-3 border-2 border-zinc-700 items-center bg-zinc-800 w-fit rounded-full px-2 py-1">
+                  <GithubIcon className="w-5 h-5 text-gray-300 -translate-y-1" />
                   <span>Código</span>
                 </div>
+                </a>
               </div>
             </div>
           </div>

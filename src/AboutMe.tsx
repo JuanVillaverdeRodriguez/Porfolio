@@ -3,7 +3,7 @@ import { LinkedinIcon } from "@/components/ui/linkedin";
 
 const AboutMe = () => {
     return (
-      <section id="about" className="text-gray-200 mx-auto max-w-5xl px-4">
+      <section id="about" className="text-gray-200 mx-auto max-w-5xl px-4 mt-32">
         <div className="flex flex-col align-middle md:flex-row md:space-x-14 md:space-y-0">
           <img 
             className="rounded-full shadow-lg w-48 h-48 md:w-64 md:h-64 object-cover md:mr-14 mx-auto" 

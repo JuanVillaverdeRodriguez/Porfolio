@@ -19,10 +19,11 @@ const Experience = () => {
                   <mark className="text-purple-300 bg-transparent font-bold"> Tus Clases Particulares</mark>. Las clases estaban orientadas a ayudar a estudiantes a comprender las bases y superar las asignaturas de programación.
                 </p>
                 <a href="https://www.tusclasesparticulares.com/profesores/juan-villaverde-rodriguez.htm" className="mt-2 inline-block">
-                  <div className="flex space-x-2.5 bg-zinc-800 rounded-full items-center px-3 py-1">
-                    <div className="bg-blue-800 w-6 h-6 flex items-center justify-center rounded-full text-sm font-bold">
-                      tc
+                  <div className="flex space-x-2.5 bg-zinc-800 rounded-full items-center px-3 py-1 mt-2">
+                    <div className="bg-white p-0.5 rounded-sm">
+                      <img src="assets/TCP_Logo_Short.svg" alt="Logo de Tus Clases Particulares" className="w-4 h-4 object-contain"/>
                     </div>
+                    
                     <span>Mi perfil</span>
                   </div>
                 </a>
