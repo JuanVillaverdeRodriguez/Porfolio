@@ -49,16 +49,16 @@ const Header = ({ isDarkMode }: HeaderProps) => {
 
       {/* Menú lateral móvil */}
       <div
-        className={`fixed top-0 left-0 h-full w-2/3 max-w-xs z-[50] bg-[var(--background)] transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full w-2/3 max-w-xs z-[50] bg-[var(--button)] transform transition-transform duration-300 ${
           menuOpen ? 'translate-x-0' : '-translate-x-full'
         } md:hidden shadow-xl`}
       >
         <ul className="flex flex-col p-6 mt-12 gap-4 text-[var(--muted-foreground)]">
-          <li onClick={() => scrollToSection("about")} className="cursor-pointer hover:text-[var(--accent)]">Perfil</li>
-          <li onClick={() => scrollToSection("experience")} className="cursor-pointer hover:text-[var(--accent)]">Experiencia</li>
-          <li onClick={() => scrollToSection("projects")} className="cursor-pointer hover:text-[var(--accent)]">Proyectos</li>
-          <li onClick={() => scrollToSection("certifications")} className="cursor-pointer hover:text-[var(--accent)]">Certificaciones</li>
-          <li onClick={() => scrollToSection("contact")} className="cursor-pointer hover:text-[var(--accent)]">Contacto</li>
+          <li onClick={() => scrollToSection("about")} className="cursor-pointer hover:text-[var(--accent)]"><T i18nKey="header.profile"/></li>
+          <li onClick={() => scrollToSection("experience")} className="cursor-pointer hover:text-[var(--accent)]"><T i18nKey="header.experience"/></li>
+          <li onClick={() => scrollToSection("projects")} className="cursor-pointer hover:text-[var(--accent)]"><T i18nKey="header.projects"/></li>
+          <li onClick={() => scrollToSection("certifications")} className="cursor-pointer hover:text-[var(--accent)]"><T i18nKey="header.certifications"/></li>
+          <li onClick={() => scrollToSection("contact")} className="cursor-pointer hover:text-[var(--accent)]"><T i18nKey="header.contact"/></li>
         </ul>
       </div>
 
