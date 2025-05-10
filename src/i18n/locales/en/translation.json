@@ -1,0 +1,57 @@
+{
+  "header.profile": "Profile",
+  "header.experience": "Experience",
+  "header.projects": "Projects",
+  "header.certifications": "Certifications",
+  "header.contact": "Contact",
+
+  "aboutMe.title": "Juan Villaverde",
+  "aboutMe.description": "<mark>Software developer</mark> graduated from the University of A Coruña (UDC) and currently pursuing a Master's degree in Computer Engineering at the same university. Experience as a <mark>private tutor</mark> and in <mark>personal projects</mark>.",
+  "aboutMe.availableButton": "Hey! I'm available",
+
+  "experience.title": "Experience",
+
+  "experience_1.title": "Private Tutor",
+  "experience_1.date": "November 2024 - February 2025",
+  "experience_1.description": "I provided <mark>programming lessons</mark> in C independently and online through the <mark>Tus Clases Particulares</mark> platform. The lessons were aimed at helping students understand the fundamentals and pass their programming courses.",
+  "experience_1.TCP_label": "My profile",
+
+  "experience_2.title": "Personal Projects",
+  "experience_2.date": "Ongoing...",
+  "experience_2.description": "I have carried out several <mark>self-initiated projects</mark> that have allowed me to expand my knowledge and improve my programming skills.",
+
+  "projects.title": "Projects",
+  "projects.Github_label": "Code",
+
+  "projects_1.title": "Musical Synthesizer",
+  "projects_1.description": "My final degree project: I developed an <mark>audio plugin</mark> in C++ for sound and music creation. It includes features like waveform generation, modulation, and sound effects. The final grade was a <mark>9.0</mark>.",
+
+  "projects_2.title": "Bus Pontevedra",
+  "projects_2.description": "A mobile app in development that displays the <mark>bus schedules</mark> for the city of Pontevedra. Since much of the data is incorrect, a website was also created to help correct it.",
+
+  "projects_3.title": "VuelingConnect",
+  "projects_3.description": "VuelingConnect is an app that allows travelers to share critical flight information during network outages using Bluetooth Low Energy (BLE) technology. The app creates a mesh network between devices, allowing information to propagate without requiring internet access.",
+
+  "certifications.title": "Certifications",
+  "certifications.download": "Download",
+  "certifications.show": "View",
+
+  "certifications_1.title": "Power BI Course",
+  "certifications_1.date": "September 2024",
+
+  "certifications_2.title": "C1 in English",
+  "certifications_2.date": "March 2025",
+
+  "contact.title": "Contact",
+  "contact.yourName": "Your name",
+  "contact.yourEmail": "Your email",
+  "contact.yourMessage": "Your message",
+  "contact.sendMessage": "Send message",
+  "contact.sendingMessage": "Sending...",
+  "contact.sendAnotherMessage": "Send another message",
+  "contact.messageSent": "Message sent!",
+  "contact.messageSenThanks": "Thanks for reaching out. I’ll reply as soon as possible.",
+  "contact.messageError": "There was an error. Please try again.",
+
+  "footer.copyright": "© 2025 Juan Villaverde. Almost all rights reserved."
+}

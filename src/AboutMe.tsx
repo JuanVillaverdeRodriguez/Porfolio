@@ -1,7 +1,9 @@
 import { GithubIcon } from "@/components/ui/github";
 import { LinkedinIcon } from "@/components/ui/linkedin";
+import T from "./i18n/T";
 
 const AboutMe = () => {
+  
     return (
       <section id="about" className="text-[var(--foreground)] mx-auto max-w-5xl px-4 mt-32">
         <div className="flex flex-col align-middle md:flex-row md:space-x-14 md:space-y-0">
@@ -15,8 +17,7 @@ const AboutMe = () => {
               Juan Villaverde
             </h1>
             <p className="text-l md:text-l md:text-start text-center">
-              <mark className="text-[var(--accent)] bg-transparent font-bold">Desarrollador de software</mark> graduado por la Universidad de A Coruña (UDC) y actualmente cursando el máster en Ingeniería Informática en la misma universidad.
-              Experiencia como <mark className="text-[var(--accent)] bg-transparent font-bold">profesor particular</mark> y en <mark className="text-[var(--accent)] bg-transparent font-bold">proyectos propios</mark>.
+              <T i18nKey="aboutMe.description"/>
             </p>
             <div className="flex md:flex-row flex-col justify-between mt-2 ">
                 <div className="flex space-x-4 w-fit md:mx-0 mx-auto">
@@ -35,9 +36,9 @@ const AboutMe = () => {
               
               <div className="md:mr-6 md:mt-0 mt-6 md:mx-0 mx-auto">
               <a href="https://www.linkedin.com/in/juan-villaverde-rodr%C3%ADguez/" className="relative inline-flex group">
-                <span className="absolute -inset-1 md:blur-sm blur-xs opacity-30 group-hover:opacity-70 transition-opacity duration-2000 animate-pulse rounded-full bg-gradient-to-r from-white dark:via-zinc-600 dark:to-[var(--accent)]"></span>
+                <span className="absolute -inset-1 md:blur-sm blur-xs opacity-30 group-hover:opacity-70 transition-opacity duration-2000 animate-pulse rounded-full bg-gradient-to-r dark:from-white from-green-600 dark:via-zinc-600 via-zinc-300 to-[var(--accent)]"></span>
                 <span className="text-base relative rounded-full bg-[var(--button)] px-4 py-2  text-[var(--muted-foreground)] shadow-sm transition-all hover:shadow-purple-400/20">
-                  Hey! Estoy disponible
+                   <T i18nKey="aboutMe.availableButton"/>
                 </span>
               </a>
             </div>

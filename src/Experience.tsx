@@ -1,9 +1,12 @@
 import { experienceData } from './data/experienceData';
+import T from "./i18n/T";
 
 const Experience = () => {
   return (
     <section id="experience" className="text-[var(--foreground)] mx-auto max-w-5xl px-4">
-      <h1 className="font-bold text-3xl mb-8">Experiencia</h1>
+      <h1 className="font-bold text-3xl mb-8">
+        <T i18nKey="experience.title"/>
+      </h1>
       <div className="relative md:ml-6">
         <ol className="relative">
           {experienceData.map((exp, index) => (
@@ -12,8 +15,8 @@ const Experience = () => {
                 <div className="absolute -left-1.25 mt-4 rounded-full text-[var(--accent)]">
                   <svg className="w-3.5 h-3.5 bg-[var(--accent)] rounded-full" fill="none" viewBox="0 0 24 24" />
                 </div>
-                <h2 className="font-semibold text-xl md:text-2xl">{exp.title}</h2>
-                <h3 className="text-base pb-4 text-[var(--muted-foreground)]">{exp.date}</h3>
+                <h2 className="font-semibold text-xl md:text-2xl">{exp.title()}</h2>
+                <h3 className="text-base pb-4 text-[var(--muted-foreground)]">{exp.date()}</h3>
                 <p className="text-base">{exp.description()}</p>
                 {exp.link && (
                   <a href={exp.link.url} className="mt-2 inline-block">
@@ -21,7 +24,7 @@ const Experience = () => {
                       <div className="p-0.5 rounded-sm">
                         <img src={exp.link.icon} alt="Logo" className="w-5 h-5 object-contain" />
                       </div>
-                      <span>{exp.link.label}</span>
+                      <span>{exp.link.label()}</span>
                     </div>
                   </a>
                 )}

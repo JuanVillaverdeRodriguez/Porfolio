@@ -2,10 +2,13 @@ import { useState } from "react";
 import emailjs from "emailjs-com";
 import { GithubIcon } from "@/components/ui/github";
 import { LinkedinIcon } from "@/components/ui/linkedin";
+import T from "./i18n/T";
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const { t } = useTranslation();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -35,7 +38,9 @@ const Contact = () => {
 
   return (
     <section id="contact" className="text-[var(--foreground)] mx-auto max-w-5xl px-4 mb-32">
-      <h1 className="font-bold text-3xl text-center mb-12 w-0">Contacto</h1>
+      <h1 className="font-bold text-3xl text-center mb-12 w-0">
+        <T i18nKey="contact.title" />
+      </h1>
       <div className="flex flex-col md:flex-row gap-12 items-start">
         {/* Info */}
         <div className="flex-1 space-y-6">
@@ -70,15 +75,17 @@ const Contact = () => {
                   d="M10 13.5l-2.5-2.5-1.42 1.42L10 16.34l7.92-7.92-1.42-1.42z"
                 />
               </svg>
-              <h2 className="text-xl font-semibold">¡Mensaje enviado!</h2>
+              <h2 className="text-xl font-semibold">
+                <T i18nKey="contact.messageSent" />
+              </h2>
               <p className="text-[var(--muted-foreground)]">
-                Gracias por contactarme. Responderé lo antes posible.
+                <T i18nKey="contact.messageSentThanks" />
               </p>
               <button
                 onClick={handleReset}
                 className="mt-4 px-4 py-2 rounded-full bg-[var(--button)] text-[var(--accent-foreground)] font-medium hover:brightness-110 transition shadow-sm cursor-pointer hover:shadow-purple-200/20"
               >
-                Enviar otro mensaje
+                <T i18nKey="contact.sendAnotherMessage" />
               </button>
             </div>
           ) : (
@@ -86,7 +93,7 @@ const Contact = () => {
               <input
                 type="text"
                 name="name"
-                placeholder="Tu nombre"
+                placeholder={t("contact.yourName")}
                 value={form.name}
                 onChange={handleChange}
                 required
@@ -95,7 +102,7 @@ const Contact = () => {
               <input
                 type="email"
                 name="email"
-                placeholder="Tu correo"
+                placeholder={t("contact.yourEmail")}
                 value={form.email}
                 onChange={handleChange}
                 required
@@ -103,7 +110,7 @@ const Contact = () => {
               />
               <textarea
                 name="message"
-                placeholder="Tu mensaje"
+                placeholder={t("contact.yourMessage")}
                 rows={5}
                 value={form.message}
                 onChange={handleChange}
@@ -115,10 +122,12 @@ const Contact = () => {
                 disabled={status === "sending"}
                 className="px-6 py-2 rounded-full bg-[var(--button)] text-[var(--accent-foreground)] hover:brightness-110 transition-shadow hover:shadow-purple-200/20 disabled:opacity-50 shadow-sm cursor-pointer"
               >
-                {status === "sending" ? "Enviando..." : "Enviar mensaje"}
+                {status === "sending" ? <T i18nKey="contact.sendingMessage" /> : <T i18nKey="contact.sendMessage" />}
               </button>
               {status === "error" && (
-                <p className="text-red-500 text-sm">Hubo un error. Inténtalo de nuevo.</p>
+                <p className="text-red-500 text-sm">        
+                  <T i18nKey="contact.messageError" />
+                </p>
               )}
             </form>
           )}

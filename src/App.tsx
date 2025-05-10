@@ -8,6 +8,7 @@ import Header from './Header.tsx'
 import Contact from './Contact.tsx';
 import Footer from './Footer.tsx';
 import Certifications from './Certifications.tsx';
+import i18n from 'i18next';
 
 function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -47,33 +48,49 @@ function App() {
         <div className="absolute z-[0] bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(192,132,252,.15),rgba(255,255,255,0))]"></div>
         <div className="absolute z-[0] bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(192,132,252,.15),rgba(255,255,255,0))]"></div>
 
-        <button
-          className="fixed top-4 right-4 z-50 px-4 py-2 rounded-full bg-[var(--button)] text-[var(--muted-foreground)] hover:brightness-110 transition-colors duration-1000 flex items-center space-x-2 shadow-sm hover:shadow-purple-300/20 cursor-pointer"
-          onClick={(e) => {
-            const x = e.clientX;
-            const y = e.clientY;
-          
-            // Posición de la "onda"
-            setRippleStyle({ left: x - 150, top: y - 150 });
-            setShowRipple(true);
-            setTimeout(() => setShowRipple(false), 600);
-          
-            // Forzar transición más suave
-            document.documentElement.classList.add('theme-transition');
-            setTimeout(() => {
-              setIsDark(prev => !prev);
+        <div className="fixed top-4 right-4 z-50 flex gap-2 items-center">
+          {/* Botón cambio de tema */}
+          <button
+            className="px-4  py-2 rounded-full bg-[var(--button)] text-[var(--muted-foreground)] hover:brightness-110 transition-colors duration-1000 flex items-center space-x-2 shadow-sm hover:shadow-purple-300/20 cursor-pointer"
+            onClick={(e) => {
+              const x = e.clientX;
+              const y = e.clientY;
+
+              setRippleStyle({ left: x - 150, top: y - 150 });
+              setShowRipple(true);
+              setTimeout(() => setShowRipple(false), 600);
+
+              document.documentElement.classList.add('theme-transition');
               setTimeout(() => {
-                document.documentElement.classList.remove('theme-transition');
-              }, 1000); // Tiempo para completar la animación
-            }, 20); // Breve retardo para permitir interpolación
-          }}
-          onMouseDown={e => e.currentTarget.classList.add("scale-95")}
-          onMouseUp={e => e.currentTarget.classList.remove("scale-95")}
-        >
-          <span className="transition-transform duration-300 ease-in-out transform hover:rotate-12  ">
-            {isDark ? <FiSun className="w-5 h-5" /> : <FiMoon className="w-5 h-5" />}
-          </span>
-        </button>
+                setIsDark(prev => !prev);
+                setTimeout(() => {
+                  document.documentElement.classList.remove('theme-transition');
+                }, 1000);
+              }, 20);
+            }}
+            onMouseDown={e => e.currentTarget.classList.add("scale-95")}
+            onMouseUp={e => e.currentTarget.classList.remove("scale-95")}
+          >
+            <span className="transition-transform duration-300 ease-in-out transform hover:rotate-12">
+              {isDark ? <FiSun className="w-5 h-5" /> : <FiMoon className="w-5 h-5" />}
+            </span>
+          </button>
+
+          {/* Selector de idioma */}
+          <select
+            className="px-4 py-2 rounded-full bg-[var(--button)] text-[var(--muted-foreground)]  hover:brightness-110 transition-colors duration-1000 shadow-sm hover:shadow-purple-300/20 cursor-pointer"
+            value={i18n.language}
+            onChange={(e) => {
+              const newLang = e.target.value;
+              i18n.changeLanguage(newLang);
+              localStorage.setItem('language', newLang);
+              window.location.reload(); 
+            }}
+          >
+            <option value="es">Español</option>
+            <option value="en">English</option>
+          </select>
+        </div>
 
 
         <div className={`flex flex-col space-y-24 px-4 py-4 scroll-smooth transition-colors duration-500 ${isDark ? 'bg-zinc-900' : 'bg-gray-100'}`} >

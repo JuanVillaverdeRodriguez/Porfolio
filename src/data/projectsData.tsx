@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import T from "../i18n/T";
 
 interface TechItem {
   name: string;
@@ -6,7 +7,7 @@ interface TechItem {
 }
 
 interface ProjectItem {
-  title: string;
+  title: () => ReactNode;
   description: () => ReactNode;
   image: string;
   stack: TechItem[];
@@ -15,10 +16,14 @@ interface ProjectItem {
 
 export const projectsData: ProjectItem[] = [
   {
-    title: "Sintetizador musical",
+    title: () => (
+      <>
+        <T i18nKey="projects_1.title" />
+      </>
+    ),
     description: () => (
       <>
-        Mi TFG, desarrollé un <mark className="text-[var(--accent)] bg-transparent font-bold">plugin de audio</mark> en C++ para la creación de sonidos y música. Tiene funcionalidades como creación de ondas, modulación y efectos de sonido. La nota final fue un <mark className="text-[var(--accent)] bg-transparent font-bold">9,0</mark>.
+        <T i18nKey="projects_1.description" />
       </>
     ),
     image: "assets/Ocnet.png",
@@ -29,10 +34,14 @@ export const projectsData: ProjectItem[] = [
     link: "https://github.com/JuanVillaverdeRodriguez/ocnet"
   },
   {
-    title: "Bus Pontevedra",
+    title: () => (
+      <>
+        <T i18nKey="projects_2.title" />
+      </>
+    ),
     description: () => (
       <>
-        Una aplicación en desarrollo para móvil que muestra los <mark className="text-[var(--accent)] bg-transparent font-bold">horarios de los autobuses</mark> de la ciudad de Pontevedra. Dado que muchos datos son erróneos, también fue necesario crear una página web para ayudar a corregirlos.
+        <T i18nKey="projects_2.description" />
       </>
     ),
     image: "assets/Bus_Management.png",
@@ -44,10 +53,14 @@ export const projectsData: ProjectItem[] = [
     link: "https://github.com/JuanVillaverdeRodriguez/BusPontevedra"
   },
   {
-    title: "HackUPC 2025",
+    title: () => (
+      <>
+        <T i18nKey="projects_3.title" />
+      </>
+    ),
     description: () => (
       <>
-        VuelingConnect es una aplicación que permite a los viajeros compartir información crítica sobre vuelos durante cortes de red utilizando tecnología Bluetooth de Bajo Consumo (BLE). La app crea una red en malla entre dispositivos, lo que permite que la información se propague sin necesidad de conexión a internet.
+        <T i18nKey="projects_3.description" />
       </>
     ),
     image: "assets/mockuuups-smartphone-in-hand-mockup.jpg",

@@ -1,0 +1,58 @@
+{
+ "header.profile": "Perfil",
+  "header.experience": "Experiencia",
+  "header.projects": "Proyectos",
+  "header.certifications": "Certificaciones",
+  "header.contact": "Contacto",
+
+  "aboutMe.title": "Juan Villaverde",
+  "aboutMe.description": "<mark>Desarrollador de software</mark> graduado por la Universidad de A Coruña (UDC) y actualmente cursando el máster en Ingeniería Informática en la misma universidad. Experiencia como <mark>profesor particular</mark> y en <mark>proyectos propios</mark>.",
+  "aboutMe.availableButton": "Hey! Estoy disponible",
+  
+  "experience.title": "Experiencia",
+  
+  "experience_1.title": "Profesor particular",
+  "experience_1.date": "Noviembre 2024 - Febrero 2025",
+  "experience_1.description": "Proporcioné <mark>clases de programación</mark> en C de forma autónoma y telemática a través de la plataforma de <mark>Tus Clases Particulares</mark>. Las clases estaban orientadas a ayudar a estudiantes a comprender las bases y superar las asignaturas de programación.",
+  "experience_1.TCP_label": "Mi perfil",
+
+  "experience_2.title": "Proyectos personales",
+  "experience_2.date": "Constantemente...",
+  "experience_2.description": "He realizado diversos <mark>proyectos por cuenta propia</mark> que me han permitido expandir mis conocimientos y mejorar mis habilidades de programación.",
+
+  "projects.title": "Proyectos",
+  "projects.Github_label": "Código",
+
+  "projects_1.title": "Sintetizador musical",
+  "projects_1.description": "Mi TFG, desarrollé un <mark>plugin de audio</mark> en C++ para la creación de sonidos y música. Tiene funcionalidades como creación de ondas, modulación y efectos de sonido. La nota final fue un <mark>9,0</mark>.",
+
+  "projects_2.title": "Bus pontevedra",
+  "projects_2.description": "Una aplicación en desarrollo para móvil que muestra los <mark>horarios de los autobuses</mark> de la ciudad de Pontevedra. Dado que muchos datos son erróneos, también fue necesario crear una página web para ayudar a corregirlos.",
+
+  "projects_3.title": "VuelingConnect",
+  "projects_3.description": "VuelingConnect es una aplicación que permite a los viajeros compartir información crítica sobre vuelos durante cortes de red utilizando tecnología Bluetooth de Bajo Consumo (BLE). La app crea una red en malla entre dispositivos, lo que permite que la información se propague sin necesidad de conexión a internet.",
+
+  "certifications.title": "Certificaciones",
+  "certifications.download": "Descargar",
+  "certifications.show": "Ver",
+
+  "certifications_1.title": "Curso de Power BI",
+  "certifications_1.date": "Septiembre 2024",
+
+  "certifications_2.title": "C1 en Inglés",
+  "certifications_2.date": "Marzo 2025",
+
+  "contact.title": "Contacto",
+  "contact.yourName": "Tu nombre",
+  "contact.yourEmail": "Tu correo",
+  "contact.yourMessage": "Tu mensaje",
+  "contact.sendMessage": "Enviar mensaje",
+  "contact.sendingMessage": "Enviando...",
+  "contact.sendAnotherMessage": "Enviar otro mensaje",
+  "contact.messageSent": "¡Mensaje enviado!",
+  "contact.messageSenThanks": "Gracias por contactarme. Responderé lo antes posible.",
+  "contact.messageError": "Hubo un error. Inténtalo de nuevo.",
+
+  "footer.copyright": "© 2025 Juan Villaverde. Casi todos los derechos reservados.."
+
+}

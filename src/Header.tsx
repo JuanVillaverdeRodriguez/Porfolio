@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi'; // Iconos para abrir/cerrar
+import T from "./i18n/T";
 
 type HeaderProps = {
   isDarkMode: boolean;
@@ -67,11 +68,11 @@ const Header = ({ isDarkMode }: HeaderProps) => {
         style={{ backgroundColor: navBackgroundColor }}
       >
         <ul className="flex flex-wrap [&>li]:px-2 justify-center text-[var(--muted-foreground)] [&>li]:cursor-pointer [&>li]:hover:text-[var(--accent)]">
-          <li onClick={() => scrollToSection("about")}>Perfil</li>
-          <li onClick={() => scrollToSection("experience")}>Experiencia</li>
-          <li onClick={() => scrollToSection("projects")}>Proyectos</li>
-          <li onClick={() => scrollToSection("certifications")}>Certificaciones</li>
-          <li onClick={() => scrollToSection("contact")}>Contacto</li>
+          <li onClick={() => scrollToSection("about")}><T i18nKey="header.profile"/></li>
+          <li onClick={() => scrollToSection("experience")}><T i18nKey="header.experience"/></li>
+          <li onClick={() => scrollToSection("projects")}><T i18nKey="header.projects"/></li>
+          <li onClick={() => scrollToSection("certifications")}><T i18nKey="header.certifications"/></li>
+          <li onClick={() => scrollToSection("contact")}><T i18nKey="header.contact"/></li>
         </ul>
       </nav>
     </>
