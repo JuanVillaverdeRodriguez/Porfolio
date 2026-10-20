@@ -11,7 +11,7 @@ i18n
       en: { translation: en },
       es: { translation: es },
     },
-    lng: localStorage.getItem('language') || 'es',
+    lng: (() => { try { return localStorage.getItem('language') || 'es'; } catch { return 'es'; } })(),
     fallbackLng: 'es',
     interpolation: { escapeValue: false }
   });

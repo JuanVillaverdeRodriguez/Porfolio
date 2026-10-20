@@ -26,3 +26,6 @@ dist-ssr
 ideas
 
 .env
+# Impeccable: capturas y bocetos de trabajo
+.impeccable/review/
+.impeccable/mocks/
