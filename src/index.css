@@ -116,7 +116,7 @@ img, canvas { display: block; max-width: 100%; }
   animation: blink 1s steps(1) infinite;
 }
 @keyframes blink { 50% { opacity: 0; } }
-mark.hl { background: none; color: var(--fg); font-weight: 700; }
+mark.hl { background: none; color: var(--magenta); font-weight: 700; }
 
 /* Prompt de shell */
 .prompt { margin-bottom: var(--line); white-space: pre-wrap; }
