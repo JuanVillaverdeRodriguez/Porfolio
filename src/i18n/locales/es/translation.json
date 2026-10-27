@@ -82,5 +82,22 @@
   "contact.email": "correo",
   "contact.message": "mensaje",
   "footer.exit": "exit",
-  "hintTouch": "toca el cielo y mira cómo se mueve el paisaje"
+  "hintTouch": "toca el cielo y mira cómo se mueve el paisaje",
+  "fire.label": "Hoguera",
+  "fire.zone": "Hoguera: mueve el malvavisco con las flechas y pulsa Intro para comértelo",
+  "fire.title": "# Siéntate un rato. Acerca un malvavisco al fuego.",
+  "fire.eat": "comer",
+  "fire.stats": "malvaviscos: {{eaten}} · perfectos: {{perfect}}",
+  "fire.msg.hint": "Mueve el ratón para acercarlo a las llamas. Clic para comértelo.",
+  "fire.msg.hintTouch": "Arrastra para acercarlo a las llamas.",
+  "fire.msg.raw": "Todavía está crudo.",
+  "fire.msg.golden": "¡Dorado! Ahora es el momento.",
+  "fire.msg.toasted": "Bien tostado. Ojo, que se pasa.",
+  "fire.msg.burnt": "Se está carbonizando...",
+  "fire.msg.burning": "¡Se ha prendido! Sacúdelo para apagarlo.",
+  "fire.msg.blown": "Apagado. Por los pelos.",
+  "fire.eat.raw": "Crudo... pero bueno, también vale.",
+  "fire.eat.golden": "Perfecto: dorado por fuera, blandito por dentro.",
+  "fire.eat.toasted": "Crujiente. Un clásico.",
+  "fire.eat.burnt": "Carbonizado. Hay quien lo prefiere así."
 }

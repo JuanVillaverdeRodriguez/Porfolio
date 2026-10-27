@@ -82,5 +82,22 @@
   "contact.email": "email",
   "contact.message": "message",
   "footer.exit": "exit",
-  "hintTouch": "tap the sky and watch the landscape move"
+  "hintTouch": "tap the sky and watch the landscape move",
+  "fire.label": "Campfire",
+  "fire.zone": "Campfire: move the marshmallow with the arrow keys and press Enter to eat it",
+  "fire.title": "# Sit for a while. Hold a marshmallow over the fire.",
+  "fire.eat": "eat",
+  "fire.stats": "marshmallows: {{eaten}} · perfect: {{perfect}}",
+  "fire.msg.hint": "Move the mouse to bring it to the flames. Click to eat it.",
+  "fire.msg.hintTouch": "Drag to bring it to the flames.",
+  "fire.msg.raw": "Still raw.",
+  "fire.msg.golden": "Golden! Now's the moment.",
+  "fire.msg.toasted": "Nicely toasted. Careful, it's going.",
+  "fire.msg.burnt": "It's turning to charcoal...",
+  "fire.msg.burning": "It caught fire! Shake it to put it out.",
+  "fire.msg.blown": "Out. That was close.",
+  "fire.eat.raw": "Raw... but hey, it counts.",
+  "fire.eat.golden": "Perfect: golden outside, gooey inside.",
+  "fire.eat.toasted": "Crunchy. A classic.",
+  "fire.eat.burnt": "Charcoal. Some people like it that way."
 }

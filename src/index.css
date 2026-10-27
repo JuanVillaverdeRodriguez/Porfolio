@@ -316,6 +316,23 @@ mark.hl { background: none; color: var(--magenta); font-weight: 700; }
 .sent-title { font-size: 1.3em; font-weight: 800; color: var(--green); }
 @keyframes fly { from { transform: translate(-30px, 20px) rotate(-6deg); opacity: 0; } }
 
+/* ── Hoguera final ──────────────────────────────────────── */
+/* La sección solo da recorrido de scroll; el escenario es fijo y se funde con el paisaje */
+.campfire { position: relative; height: 230vh; }
+.campfire-stage { position: fixed; inset: 0; z-index: 40; pointer-events: none; }
+.campfire-stage canvas { position: absolute; inset: 0; }
+.campfire-zone { position: absolute; inset: 12% 0 24%; outline: none; }
+.campfire-zone.is-on { pointer-events: auto; cursor: none; touch-action: none; }
+.campfire-zone:focus-visible { box-shadow: inset 0 0 0 2px var(--yellow); }
+.campfire-hud { position: absolute; inset: 52px 16px 24px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; opacity: 0; transition: opacity 0.6s var(--ease-out); }
+.campfire-hud.is-on { opacity: 1; }
+.campfire-title { color: var(--muted); font-style: italic; }
+.campfire-hud p, .campfire-hud .dim { text-shadow: 0 0 12px var(--bg), 0 0 4px var(--bg), 0 0 2px var(--bg); }
+.campfire-bottom { display: grid; justify-items: center; gap: calc(var(--line) / 2); }
+.campfire-msg { min-height: var(--line); }
+.campfire-actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1ch 3ch; }
+.campfire-hud.is-on .btn-primary { pointer-events: auto; }
+
 /* ── Pie ────────────────────────────────────────────────── */
 .footer {
   position: relative; z-index: 1;

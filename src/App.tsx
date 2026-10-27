@@ -9,6 +9,7 @@ import Projects from "./sections/Projects";
 import Certifications from "./sections/Certifications";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
+import Campfire from "./ascii/Campfire";
 import { applyTheme, defaultTheme, Theme } from "./themes";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <Campfire theme={theme} />
     </>
   );
 }
