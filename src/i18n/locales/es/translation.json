@@ -39,7 +39,7 @@
   "contact.sendAnotherMessage": "Enviar otro mensaje",
   "contact.messageSent": "¡Mensaje enviado!",
   "contact.messageError": "Hubo un error. Inténtalo de nuevo.",
-  "footer.copyright": "© 2025 Juan Villaverde. Casi todos los derechos reservados.",
+  "footer.copyright": "© {{year}} Juan Villaverde. Casi todos los derechos reservados.",
   "contact.messageSentThanks": "Gracias por contactarme. Responderé lo antes posible.",
   "status.nav": "Capítulos",
   "status.theme": "Cambiar tema de terminal",

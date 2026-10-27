@@ -8,7 +8,7 @@ export default function Footer() {
         <span className="p-user">juan</span><span className="p-at">@</span><span className="p-host">udc</span>
         <span className="p-at">:~$ </span>{t("footer.exit")}
       </p>
-      <p className="dim">{t("footer.copyright")}</p>
+      <p className="dim">{t("footer.copyright", { year: new Date().getFullYear() })}</p>
       <p className="footer-links">
         <a className="tlink" href="https://github.com/JuanVillaverdeRodriguez" target="_blank" rel="noopener noreferrer">github</a>
         <span aria-hidden="true"> · </span>
