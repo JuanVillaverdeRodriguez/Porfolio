@@ -30,7 +30,7 @@ export default function Projects() {
 
       <div className="projects">
         {projectsData.map((p, i) => (
-          <article key={p.slug} id={`p-${p.slug}`} className={`project ${i % 2 ? "project-flip" : ""} ${p.featured ? "project-featured" : ""}`}>
+          <article key={p.slug} id={`p-${p.slug}`} className={`project ${i % 2 ? "project-flip" : ""}`}>
             <Pane title={`${p.slug}/`} right={p.stack.join(" · ")}>
               <div className="project-grid">
                 {p.featured && p.shots ? (

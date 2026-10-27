@@ -19,7 +19,6 @@ export default function Screen({ shots, name, path, cols = 160, knockout = 2, bl
   const [index, setIndex] = useState(0);
   const [raw, setRaw] = useState(false);
   const shot = shots[index];
-  const file = shot.src.split("/").pop();
 
   return (
     <div className="project-shot screen">
@@ -27,7 +26,7 @@ export default function Screen({ shots, name, path, cols = 160, knockout = 2, bl
         <p className="screen-cmd" aria-hidden="true">
           <span className="p-path">{path}</span>
           <span className="p-at">$ </span>
-          <span className="p-cmd">{raw ? `imgcat ${file}` : `jp2a --colors ${file}`}</span>
+          <span className="p-cmd">{raw ? `imgcat ${shot.label}.png` : `jp2a ${shot.label}.png`}</span>
         </p>
         <div className="screen-controls">
           <div className="sb-lang" role="group" aria-label={t("projects.view")}>
