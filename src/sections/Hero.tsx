@@ -47,7 +47,7 @@ export default function Hero({ theme }: { theme: Theme }) {
               <button className={`sb-btn ${raw ? "is-on" : ""}`} aria-pressed={raw} onClick={() => setRaw(true)}>raw</button>
             </div>
             {raw ? (
-              <img src="assets/Yo_recorte.png" alt={t("neofetch.photo")} className="art-raw" />
+              <img src="assets/Yo.jpg" alt={t("neofetch.photo")} className="art-raw" />
             ) : (
               <AsciiImage
                 src="assets/Yo_recorte.png"
