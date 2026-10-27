@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import AsciiImage from "../ascii/AsciiImage";
 import { Narrator } from "../ascii/Prompt";
@@ -15,6 +16,7 @@ const LINKS = [
 
 export default function Hero({ theme }: { theme: Theme }) {
   const { t } = useTranslation();
+  const [raw, setRaw] = useState(false);
   const touch = typeof window !== "undefined" && window.matchMedia("(hover: none)").matches;
   const rows: [string, string][] = [
     ["neofetch.role", "neofetch.roleValue"],
@@ -39,15 +41,25 @@ export default function Hero({ theme }: { theme: Theme }) {
       <Pane title="~ — zsh" right="80×24">
         <Prompt cmd="neofetch" />
         <div className="neofetch">
-          <AsciiImage
-            src="assets/Yo_recorte.png"
-            alt={t("neofetch.portrait")}
-            cols={110}
-            knockout={2}
-            floor={0.3}
-            light={theme.light}
-            className="neofetch-art"
-          />
+          <figure className="neofetch-art">
+            <div className="sb-lang art-mode" role="group" aria-label={t("projects.mode")}>
+              <button className={`sb-btn ${!raw ? "is-on" : ""}`} aria-pressed={!raw} onClick={() => setRaw(false)}>ascii</button>
+              <span aria-hidden="true">|</span>
+              <button className={`sb-btn ${raw ? "is-on" : ""}`} aria-pressed={raw} onClick={() => setRaw(true)}>raw</button>
+            </div>
+            {raw ? (
+              <img src="assets/Yo_recorte.png" alt={t("neofetch.photo")} className="art-raw" />
+            ) : (
+              <AsciiImage
+                src="assets/Yo_recorte.png"
+                alt={t("neofetch.portrait")}
+                cols={110}
+                knockout={2}
+                floor={0.3}
+                light={theme.light}
+              />
+            )}
+          </figure>
           <div className="neofetch-info">
             <p className="nf-title"><span className="c-user">juan</span>@<span className="c-host">villaverde</span></p>
             <p className="nf-rule" aria-hidden="true">-------------------</p>

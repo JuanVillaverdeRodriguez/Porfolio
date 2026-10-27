@@ -24,7 +24,7 @@ export default function Figlet({ text, lolcat = false, max = 22, fitText, classN
   const width = fitWidth || Math.max(...lines.map(l => l.length));
   const [ref, seen] = useInView<HTMLDivElement>(0.2);
 
-  const style = { "--cols": width, "--max": `${max}px` } as CSSProperties;
+  const style = { "--cols": width, "--max": `calc(${max}px * var(--scale, 1))` } as CSSProperties;
 
   return (
     <div ref={ref} className={`figlet-fit ${className}`}>

@@ -1,4 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;0,800;1,400&display=swap");
+/* JetBrains Mono autoalojada: la versión de Google Fonts no trae los caracteres de caja
+   ni los bloques (─ │ █ ╗ ...), y cada dispositivo los rellenaba con otra fuente */
+@font-face { font-family: "JetBrains Mono"; src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url("/fonts/JetBrainsMono-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url("/fonts/JetBrainsMono-ExtraBold.woff2") format("woff2"); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url("/fonts/JetBrainsMono-Italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
 
 /* Valores por defecto (catppuccin-mocha) hasta que applyTheme pinta el tema guardado */
 :root {
@@ -159,11 +164,13 @@ mark.hl { background: none; color: var(--magenta); font-weight: 700; }
 }
 .pane-frame { position: absolute; inset: 0; pointer-events: none; color: var(--frame); white-space: pre; overflow: hidden; transition: color 0.35s var(--ease-out); }
 .pane:hover .pane-frame, .pane:focus-within .pane-frame { color: var(--green); }
-.pane-top, .pane-bottom { position: absolute; left: 0; height: var(--line); line-height: var(--line); }
+.pane-top, .pane-bottom { position: absolute; left: 0; right: 0; display: flex; height: var(--line); line-height: var(--line); }
+.pane-run { flex: 1; min-width: 0; overflow: hidden; }
 .pane-top { top: 0; }
 .pane-bottom { bottom: 0; }
 .pane-side { position: absolute; top: var(--line); line-height: var(--line); }
 .pane-left { left: 0; }
+.pane-right { right: 0; }
 .pane-probe { position: absolute; visibility: hidden; white-space: pre; pointer-events: none; }
 .pane-titlebar {
   position: absolute; top: 0; left: 2ch; right: 2ch;
@@ -177,8 +184,10 @@ mark.hl { background: none; color: var(--magenta); font-weight: 700; }
 
 /* ── Héroe / neofetch ───────────────────────────────────── */
 .hero { min-height: calc(100svh - 120px); }
-.neofetch { display: grid; grid-template-columns: minmax(0, 400px) minmax(0, 1fr); gap: 4ch; align-items: start; }
+.neofetch { display: grid; grid-template-columns: minmax(0, calc(400px * var(--scale, 1))) minmax(0, 1fr); gap: 4ch; align-items: start; }
 .neofetch-art { width: 100%; }
+.art-mode { justify-content: flex-end; font-size: 13px; margin-bottom: calc(var(--line) / 2); }
+.art-raw { width: 100%; height: auto; animation: scan 0.9s steps(24) both; }
 .nf-title { font-weight: 700; }
 .c-user { color: var(--green); }
 .c-host { color: var(--blue); }
@@ -268,11 +277,10 @@ mark.hl { background: none; color: var(--magenta); font-weight: 700; }
 .screen .p-cmd { color: #cdd6f4; }
 .screen .p-path { color: #94e2d5; }
 .screen .p-at { color: #a6adc8; }
-.screen-controls { display: flex; gap: 3ch; }
 .screen .sb-lang { color: #45475a; }
 .screen .sb-btn { color: #a6adc8; }
 .screen .sb-btn:hover, .screen .sb-btn.is-on { color: #cdd6f4; }
-.screen-raw { width: 100%; height: auto; animation: scan 0.9s steps(24) both; }
+.screen-raw { width: 100%; height: auto; max-height: 70vh; object-fit: contain; animation: scan 0.9s steps(24) both; }
 @keyframes scan { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
 
 /* ── Certificaciones ────────────────────────────────────── */
@@ -322,6 +330,23 @@ mark.hl { background: none; color: var(--magenta); font-weight: 700; }
 .footer-links { margin-top: calc(var(--line) / 2); }
 
 /* ── Responsivo ─────────────────────────────────────────── */
+/* Pantallas grandes / ultrawide: todo crece en proporción (texto, rejilla, rótulos y columna) */
+@media (min-width: 1700px) {
+  :root { --scale: 1.15; --line: 27px; }
+  body { font-size: 17px; }
+  .story, .footer { width: min(1320px, 100% - 64px); }
+  .statusbar { height: 32px; line-height: 32px; font-size: 14px; }
+  .sb-menu { top: 34px; }
+  .sb-menu-item { line-height: 32px; }
+}
+@media (min-width: 2300px) {
+  :root { --scale: 1.3; --line: 30px; }
+  body { font-size: 19px; }
+  .story, .footer { width: min(1560px, 100% - 96px); }
+  .statusbar { height: 36px; line-height: 36px; font-size: 15px; }
+  .sb-menu { top: 38px; }
+  .story { padding-top: 104px; }
+}
 @media (max-width: 860px) {
   .neofetch, .project-grid, .certs, .contact { grid-template-columns: minmax(0, 1fr); }
   .neofetch-art { max-width: 230px; order: 2; }

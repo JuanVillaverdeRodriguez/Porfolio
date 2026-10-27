@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import AsciiImage from "../ascii/AsciiImage";
 import Figlet from "../ascii/Figlet";
 import Pane from "../ascii/Pane";
 import Prompt from "../ascii/Prompt";
@@ -7,7 +6,7 @@ import Screen from "../ascii/Screen";
 import Typewriter from "../ascii/Typewriter";
 import { projectsData } from "../data/projectsData";
 
-// Las capturas se pintan siempre sobre una "pantalla" oscura: son interfaces, no fotos.
+// Las capturas se muestran tal cual sobre una "pantalla" oscura de terminal.
 export default function Projects() {
   const { t } = useTranslation();
   return (
@@ -33,18 +32,11 @@ export default function Projects() {
           <article key={p.slug} id={`p-${p.slug}`} className={`project ${i % 2 ? "project-flip" : ""}`}>
             <Pane title={`${p.slug}/`} right={p.stack.join(" · ")}>
               <div className="project-grid">
-                {p.featured && p.shots ? (
-                  <Screen shots={p.shots} name={t(`${p.key}.title`)} path={`~/${p.slug}`} />
-                ) : (
-                  <AsciiImage
-                    src={p.image}
-                    alt={t("projects.shot", { name: t(`${p.key}.title`) })}
-                    cols={170}
-                    crop={p.crop}
-                    knockout={p.slug === "vuelingconnect" ? 0.86 : 2}
-                    className="project-shot"
-                  />
-                )}
+                <Screen
+                  shots={p.shots ?? [{ label: p.slug, src: p.image }]}
+                  name={t(`${p.key}.title`)}
+                  path={`~/${p.slug}`}
+                />
                 <div className="project-text">
                   <h3 className="project-title">{t(`${p.key}.title`)}</h3>
                   <ul className="tags" aria-label={t("projects.stack")}>
