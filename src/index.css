@@ -132,6 +132,7 @@ mark.hl { background: none; color: var(--magenta); font-weight: 700; }
   font-size: min(var(--max), calc(100cqw / var(--cols) / 0.6));
   line-height: 1.32;
   white-space: pre;
+  width: fit-content; /* el hueco en el paisaje acaba donde acaba la letra */
   color: var(--accent, var(--fg));
 }
 .figlet.armed { clip-path: inset(0 100% 0 0); }

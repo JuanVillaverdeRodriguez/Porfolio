@@ -60,7 +60,7 @@ export default function NatureCanvas({ theme }: { theme: Theme }) {
     let last = 0;
     let smoothS = storyProgress();
     let clearEls: Element[] = [];
-    const CLEAR = ".narrator p, .hint, .footer p, .pane, .ls, .chapter > .prompt, .figlet-fit, .statusbar";
+    const CLEAR = ".narrator p, .hint, .footer p, .pane, .ls, .chapter > .prompt, .figlet, .statusbar";
     const collect = () => { clearEls = [...document.querySelectorAll(CLEAR)]; };
     collect();
     const collectId = setInterval(collect, 1000);
