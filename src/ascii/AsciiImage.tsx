@@ -14,12 +14,13 @@ type Props = {
   knockout?: number; // luminancia a partir de la cual el fondo claro se vacía
   crop?: [number, number, number, number]; // x, y, ancho, alto en fracciones de la imagen
   floor?: number; // densidad mínima de lo opaco: en un recorte, la silueta entera se dibuja
+  blackPoint?: number; // luminancia por debajo de la cual el fondo oscuro se vacía (interfaces oscuras)
   className?: string;
 };
 
 type Cell = { ch: string; color: string };
 
-export default function AsciiImage({ src, alt, cols = 72, light = false, knockout = 0.86, crop = [0, 0, 1, 1], floor = 0, className }: Props) {
+export default function AsciiImage({ src, alt, cols = 72, light = false, knockout = 0.86, crop = [0, 0, 1, 1], floor = 0, blackPoint = 0, className }: Props) {
   const [cx, cy, cwid, chei] = crop;
   const wrapRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -71,6 +72,7 @@ export default function AsciiImage({ src, alt, cols = 72, light = false, knockou
           const lum = Math.min(1, Math.max(0, (raw - lo) / span));
           const sat = Math.max(r, g, b) - Math.min(r, g, b);
           if (raw > knockout && sat < 40) { line.push({ ch: " ", color: "" }); continue; }
+          if (raw < blackPoint) { line.push({ ch: " ", color: "" }); continue; }
           const v = light ? 1 - lum : lum;
           const dens = floor + (1 - floor) * Math.pow(v, 0.9);
           const ch = RAMP[Math.min(RAMP.length - 1, Math.max(floor > 0 ? 1 : 0, Math.floor(dens * RAMP.length)))];
@@ -176,7 +178,7 @@ export default function AsciiImage({ src, alt, cols = 72, light = false, knockou
       canvas.removeEventListener("pointermove", onMove);
       canvas.removeEventListener("pointerleave", onLeave);
     };
-  }, [src, cols, light, knockout, cx, cy, cwid, chei, floor]);
+  }, [src, cols, light, knockout, cx, cy, cwid, chei, floor, blackPoint]);
 
   return (
     <div ref={wrapRef} className={className}>

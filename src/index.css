@@ -256,6 +256,31 @@ mark.hl { background: none; color: var(--magenta); font-weight: 700; }
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--muted) 30%, transparent), 0 10px 30px -12px rgb(0 0 0 / 0.5);
 }
 
+/* Proyecto destacado: pantalla a todo el ancho y texto debajo en dos columnas */
+.project-featured .project-grid { grid-template-columns: minmax(0, 1fr); gap: var(--line); }
+.project-featured .project-text { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); column-gap: 3ch; align-items: start; }
+.project-featured .project-title, .project-featured .tags { grid-column: 1; }
+.project-featured .project-desc { grid-column: 2; grid-row: 1 / span 2; }
+.project-featured .clone { grid-column: 2; grid-row: 3; justify-self: start; }
+
+/* Pantalla con varias capturas (ASCII / raw) */
+.screen-bar {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0 3ch;
+  margin-bottom: calc(var(--line) / 2); font-size: 13px; line-height: var(--line);
+  color: #a6adc8;
+}
+.screen-cmd { white-space: pre-wrap; }
+/* La pantalla es siempre oscura (como .project-shot), así que sus textos no siguen el tema */
+.screen .p-cmd { color: #cdd6f4; }
+.screen .p-path { color: #94e2d5; }
+.screen .p-at { color: #a6adc8; }
+.screen-controls { display: flex; gap: 3ch; }
+.screen .sb-lang { color: #45475a; }
+.screen .sb-btn { color: #a6adc8; }
+.screen .sb-btn:hover, .screen .sb-btn.is-on { color: #cdd6f4; }
+.screen-raw { width: 100%; height: auto; animation: scan 0.9s steps(24) both; }
+@keyframes scan { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+
 /* ── Certificaciones ────────────────────────────────────── */
 .certs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4ch; }
 .cert-inner { display: flex; gap: 2ch; align-items: center; }
@@ -308,6 +333,8 @@ mark.hl { background: none; color: var(--magenta); font-weight: 700; }
   .neofetch-art { max-width: 230px; order: 2; }
   .project-flip .project-shot { order: 0; }
   .project:nth-child(n) { width: 100%; }
+  .project-featured .project-text { grid-template-columns: minmax(0, 1fr); }
+  .project-featured .project-desc, .project-featured .clone { grid-column: 1; grid-row: auto; }
 }
 @media (max-width: 640px) {
   body { font-size: 13.5px; }

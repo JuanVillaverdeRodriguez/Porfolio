@@ -3,6 +3,7 @@ import AsciiImage from "../ascii/AsciiImage";
 import Figlet from "../ascii/Figlet";
 import Pane from "../ascii/Pane";
 import Prompt from "../ascii/Prompt";
+import Screen from "../ascii/Screen";
 import Typewriter from "../ascii/Typewriter";
 import { projectsData } from "../data/projectsData";
 
@@ -29,17 +30,21 @@ export default function Projects() {
 
       <div className="projects">
         {projectsData.map((p, i) => (
-          <article key={p.slug} id={`p-${p.slug}`} className={`project ${i % 2 ? "project-flip" : ""}`}>
+          <article key={p.slug} id={`p-${p.slug}`} className={`project ${i % 2 ? "project-flip" : ""} ${p.featured ? "project-featured" : ""}`}>
             <Pane title={`${p.slug}/`} right={p.stack.join(" · ")}>
               <div className="project-grid">
-                <AsciiImage
-                  src={p.image}
-                  alt={t("projects.shot", { name: t(`${p.key}.title`) })}
-                  cols={170}
-                  crop={p.crop}
-                  knockout={p.slug === "vuelingconnect" ? 0.86 : 2}
-                  className="project-shot"
-                />
+                {p.featured && p.shots ? (
+                  <Screen shots={p.shots} name={t(`${p.key}.title`)} path={`~/${p.slug}`} />
+                ) : (
+                  <AsciiImage
+                    src={p.image}
+                    alt={t("projects.shot", { name: t(`${p.key}.title`) })}
+                    cols={170}
+                    crop={p.crop}
+                    knockout={p.slug === "vuelingconnect" ? 0.86 : 2}
+                    className="project-shot"
+                  />
+                )}
                 <div className="project-text">
                   <h3 className="project-title">{t(`${p.key}.title`)}</h3>
                   <ul className="tags" aria-label={t("projects.stack")}>
