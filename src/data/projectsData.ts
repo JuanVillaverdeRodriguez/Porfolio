@@ -35,7 +35,7 @@ export const projectsData: ProjectItem[] = [
   {
     key: "projects_3",
     slug: "vuelingconnect",
-    image: "assets/mockuuups-smartphone-in-hand-mockup.jpg",
+    image: "assets/VuelingConnect.jpg",
     stack: ["Flutter", "Python"],
     link: "https://github.com/migueldeoleiros/vuelingconnect",
   },
