@@ -29,7 +29,7 @@ export default function Certifications() {
       <Prompt cmd={t("certifications.cmd")} />
       <div className="certs">
         {certs.map((c, i) => (
-          <Pane key={c.key} double className="cert">
+          <Pane key={c.key} className="cert">
             <div className="cert-inner">
               <pre className="seal" aria-hidden="true" style={{ color: i ? "var(--magenta)" : "var(--yellow)" }}>{seal(c.seal)}</pre>
               <div>

@@ -11,7 +11,7 @@ type Props = { text: string; lolcat?: boolean; max?: number; fitText?: string; c
 
 const strip = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toUpperCase();
 
-export default function Figlet({ text, lolcat = false, max = 22, fitText, className = "" }: Props) {
+export default function Figlet({ text, lolcat = false, max = 10, fitText, className = "" }: Props) {
   const lines = useMemo(() => {
     const out = figlet.textSync(strip(text), { font: "ANSI Shadow" }).split("\n");
     while (out.length && !out[out.length - 1].trim()) out.pop();

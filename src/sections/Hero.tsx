@@ -17,7 +17,6 @@ const LINKS = [
 export default function Hero({ theme }: { theme: Theme }) {
   const { t } = useTranslation();
   const [raw, setRaw] = useState(false);
-  const touch = typeof window !== "undefined" && window.matchMedia("(hover: none)").matches;
   const rows: [string, string][] = [
     ["neofetch.role", "neofetch.roleValue"],
     ["neofetch.degree", "neofetch.degreeValue"],
@@ -30,7 +29,7 @@ export default function Hero({ theme }: { theme: Theme }) {
     <section id="about" className="chapter hero" aria-labelledby="hero-title">
       <h1 id="hero-title" className="sr-only">Juan Villaverde</h1>
       <div className="hero-names">
-        <Figlet text="Juan Villaverde" lolcat max={17} className="name-wide" />
+        <Figlet text="Juan Villaverde" lolcat max={12} className="name-wide" />
         <div className="name-stack">
           <Figlet text="Juan" lolcat fitText="Villaverde" />
           <Figlet text="Villaverde" lolcat className="hero-name-2" />
@@ -38,7 +37,7 @@ export default function Hero({ theme }: { theme: Theme }) {
       </div>
       <Narrator i18nKey="story.night" />
 
-      <Pane title="~ — zsh" right="80×24">
+      <Pane title="~ — zsh">
         <Prompt cmd="neofetch" />
         <div className="neofetch">
           <figure className="neofetch-art">
@@ -70,16 +69,7 @@ export default function Hero({ theme }: { theme: Theme }) {
                   <dd><Typewriter text={t(v)} as="span" delay={300 + i * 180} caret={false} /></dd>
                 </div>
               ))}
-              <div className="nf-row">
-                <dt>{t("neofetch.theme")}</dt>
-                <dd>{theme.name}</dd>
-              </div>
             </dl>
-            <div className="nf-blocks" aria-hidden="true">
-              {["red", "orange", "yellow", "green", "cyan", "blue", "magenta", "fg"].map(c => (
-                <span key={c} style={{ color: `var(--${c})` }}>███</span>
-              ))}
-            </div>
             <Typewriter i18nKey="aboutMe.description" className="hero-lede" delay={900} />
             <div className="hero-actions">
           <a className="btn-primary" href="https://www.linkedin.com/in/juan-villaverde-rodr%C3%ADguez/">
@@ -95,7 +85,6 @@ export default function Hero({ theme }: { theme: Theme }) {
           </div>
         </div>
       </Pane>
-      <p className="hint" aria-hidden="true">{t(touch ? "hintTouch" : "hint")}</p>
     </section>
   );
 }

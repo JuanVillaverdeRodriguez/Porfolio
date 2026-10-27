@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 import Figlet from "../ascii/Figlet";
 import Pane from "../ascii/Pane";
-import Prompt from "../ascii/Prompt";
 import Screen from "../ascii/Screen";
 import Typewriter from "../ascii/Typewriter";
 import { projectsData } from "../data/projectsData";
@@ -13,20 +12,6 @@ export default function Projects() {
     <section id="projects" className="chapter" aria-labelledby="proj-title">
       <h2 id="proj-title" className="sr-only">{t("projects.title")}</h2>
       <Figlet text={t("projects.title")} />
-      <div className="ls">
-        <Prompt cmd={t("projects.cmd")} />
-        <p className="ls-out">
-          {projectsData.map(p => (
-            <a
-              key={p.slug}
-              href={`#p-${p.slug}`}
-              className="ls-dir"
-              onClick={e => { e.preventDefault(); document.getElementById(`p-${p.slug}`)?.scrollIntoView({ behavior: "smooth" }); }}
-            >{p.slug}/</a>
-          ))}
-        </p>
-      </div>
-
       <div className="projects">
         {projectsData.map((p, i) => (
           <article key={p.slug} id={`p-${p.slug}`} className={`project ${i % 2 ? "project-flip" : ""}`}>
